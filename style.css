@@ -1,29 +1,219 @@
-header {
-    background-color: #183C63;
-    color: #FFFFFF;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 16px;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Educação Digital</title>
+    
+    <style>
+        /* ==========================================
+           1. VARIÁVEIS DE TEMA (CLARO / ESCURO)
+           ========================================== */
+        :root {
+            --bg-header: #183C63;
+            --color-header: #FFFFFF;
+            --bg-body: #F4F7FA;
+            --bg-card: #FFFFFF;
+            --color-text-main: #222222;
+            --color-text-muted: #555555;
+            --border-card: #E0E0E0;
+            --btn-bg: #FFFFFF;
+            --btn-text: #183C63;
+        }
 
-main {
-    background-color: #FFFFFF;
-    color: #183C63;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 16px;
-}
+        body.dark-mode {
+            --bg-header: #0F172A;
+            --color-header: #F8FAFC;
+            --bg-body: #121212;
+            --bg-card: #1E1E1E;
+            --color-text-main: #F1F5F9;
+            --color-text-muted: #94A3B8;
+            --border-card: #333333;
+            --btn-bg: #334155;
+            --btn-text: #F8FAFC;
+        }
 
-article {
-    display: flex;
-}
+        /* ==========================================
+           2. ESTILOS GERAIS E RESET
+           ========================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-img {
-    width: 80px;
-    height: 80px;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--color-text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-.artigo-autor {
-    font-weight: bold;
-}
+        /* ==========================================
+           3. CABEÇALHO (HEADER)
+           ========================================== */
+        header {
+            background-color: var(--bg-header);
+            color: var(--color-header);
+            padding: 24px 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-tema {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .btn-tema:hover {
+            transform: scale(1.05);
+        }
+
+        /* ==========================================
+           4. CONTEÚDO PRINCIPAL E POSTAGENS
+           ========================================== */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        .posts-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .post {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            padding: 20px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .post-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .post-body {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .post-body h2 {
+            font-size: 1.25rem;
+            color: var(--color-text-main);
+        }
+
+        .post-autor {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        .post-texto {
+            font-size: 0.95rem;
+            color: var(--color-text-main);
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 500px) {
+            .post {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Educação Digital</h1>
+            <p>Vou compartilhar meus conhecimentos sobre tecnologia, segurança e letramento digital.</p>
+            <button id="btn-tema" class="btn-tema">🌙 Modo Escuro</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="posts-container">
+            
+            <article class="post">
+                <img src="imagem-blog.png" alt="Ilustração de tecnologia e educação digital" class="post-img">
+                <div class="post-body">
+                    <h2>Boas-Vindas ao Blog!</h2> 
+                    <p class="post-autor">Por: <strong>Yonaiker Betancourt</strong></p> 
+                    <p class="post-texto">
+                        Seja bem-vindo! Aqui vou compartilhar dicas e reflexões sobre educação digital, cidadania na web e o uso consciente da tecnologia no dia a dia.
+                    </p>
+                </div>
+            </article>
+
+            <article class="post">
+                <img src="https://via.placeholder.com/80" alt="Ícone de segurança digital" class="post-img">
+                <div class="post-body">
+                    <h2>Segurança e Privacidade na Internet</h2> 
+                    <p class="post-autor">Por: <strong>Yonaiker Betancourt</strong></p> 
+                    <p class="post-texto">
+                        Entender como proteger seus dados pessoais e identificar tentativas de golpe é o primeiro passo para uma navegação segura e responsável.
+                    </p>
+                </div>
+            </article>
+
+            <article class="post">
+                <img src="https://via.placeholder.com/80" alt="Ícone de ferramentas de estudo" class="post-img">
+                <div class="post-body">
+                    <h2>Ferramentas Digitais para Estudos</h2> 
+                    <p class="post-autor">Por: <strong>Yonaiker Betancourt</strong></p> 
+                    <p class="post-texto">
+                        Descubra como aplicativos de organização, mapas mentais e plataformas colaborativas podem otimizar sua rotina de aprendizado.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnTema = document.getElementById('btn-tema');
+
+            btnTema.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+
+                if (document.body.classList.contains('dark-mode')) {
+                    btnTema.textContent = '☀️ Modo Claro';
+                } else {
+                    btnTema.textContent = '🌙 Modo Escuro';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
