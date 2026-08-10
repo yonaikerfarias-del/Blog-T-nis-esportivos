@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+header {
+    background-color: #183C63;
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+}
 
-    <header>
-        <h1>Título do Blog</h1>
-        <button id="theme-toggle" class="btn-theme">Mudar Tema</button>
-    </header>
+main {
+    background-color: #FFFFFF;
+    color: #183C63;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+}
 
-    <main>
-        <section class="posts-container">
-            <article class="post">
-                <img src="https://via.placeholder.com/80" alt="Avatar do Autor">
-                <div class="post-content">
-                    <p class="artigo-autor">Autor: João Silva</p>
-                    <p class="artigo-texto">Este é o conteúdo da primeira postagem. O layout flexbox organiza a imagem e o texto lado a lado.</p>
-                </div>
-            </article>
+article {
+    display: flex;
+}
 
-            <article class="post">
-                <img src="https://via.placeholder.com/80" alt="Avatar do Autor">
-                <div class="post-content">
-                    <p class="artigo-autor">Autora: Maria Souza</p>
-                    <p class="artigo-texto">Esta é uma nova postagem para demonstrar a disposição do feed e a legibilidade das fontes.</p>
-                </div>
-            </article>
-        </section>
-    </main>
+img {
+    width: 80px;
+    height: 80px;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.artigo-autor {
+    font-weight: bold;
+}
