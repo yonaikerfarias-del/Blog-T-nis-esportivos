@@ -1,41 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blog de tenis esportivos</title>
-        <style>
-          header{
-            background-color:rgb(41, 38, 38) ;
-            color: aliceblue;
-            text-align: center;
-            max: width 800px;
-            margin:0 auto;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Tênis Esportivos</title>
+    <style>
+        /* Configurações Globais e Variáveis de Tema */
+        :root {
+            --bg-header: #292626;
+            --text-header: #f0f8ff;
+            --bg-body: #f4f4f9;
+            --bg-card: #ffffff;
+            --text-color: #333333;
+            --text-muted: #666666;
+            --border-color: #ddd;
+        }
 
-          } 
-          main{
-          background-color: rgb(0, 0, 0);
-           color: aliceblue;
-           max: width 800px;
-            margin:0 auto;
-            padding: 16px;
-          }
-          img{
-            width: 80px;
-          }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>blog de tenis esportivos</h1>
-            <p>vou compaltilhar meus conhecimentos sobre tenis originais</p>
-        </header>
-        <main>
-            <img src="imagem-blog.png" alt="Ilustração em pixel art preto e branco de um par de tênis esportivos de cano baixo, com detalhes em preto e branco e a palavra "RUN" na lateral, posicionados em uma pista de corrida pixelada.">
+        /* Tema Escuro */
+        body.dark-mode {
+            --bg-body: #121212;
+            --bg-card: #1e1e1e;
+            --text-color: #f0f8ff;
+            --text-muted: #aaa;
+            --border-color: #333;
+        }
+
+        /* Estilização Geral e Legibilidade de Fontes */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--bg-header);
+            color: var(--text-header);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        /* Botão de Alternar Tema */
+        #toggle-theme {
+            background-color: #ffffff;
+            color: #292626;
+            border: none;
+            padding: 8px 16px;
+            margin-top: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        #toggle-theme:hover {
+            transform: scale(1.05);
+        }
+
+        /* Layout e Espaçamento Lateral */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px; /* Espaçamento lateral */
+        }
+
+        /* Disposição das Postagens */
+        .post {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .post img {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .post h2 {
+            margin-top: 0;
+        }
+
+        .autor {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Blog de Tênis Esportivos</h1>
+        <p>Vou compartilhar meus conhecimentos sobre tênis originais</p>
+        <button id="toggle-theme">Alternar Tema</button>
+    </header>
+
+    <main>
+        <article class="post">
+            <img src="imagem-blog.png" alt="Ilustração em pixel art preto e branco de um par de tênis esportivos de cano baixo, com detalhes em preto e branco e a palavra 'RUN' na lateral.">
             <h2>Meu primeiro post</h2> 
-            <p>por: Yonaiker Betancourt</p> 
-            <p>Boas-Vindas ao meu Blog! Aqui vou compaltihar dicas de tenis esportivos da area de esportes</p>
-        </main>
-        
- </body>
+            <p class="autor">Por: Yonaiker Betancourt</p> 
+            <p>Boas-vindas ao meu Blog! Aqui vou compartilhar dicas de tênis esportivos da área de esportes.</p>
+        </article>
+
+        <article class="post">
+            <h2>Como escolher o tênis ideal para corrida</h2>
+            <p class="autor">Por: Yonaiker Betancourt</p>
+            <p>Escolher o tênis certo depende do seu tipo de pisada e do terreno. Sempre priorize o amortecimento e o conforto para evitar lesões!</p>
+        </article>
+    </main>
+
+    <script>
+        const themeButton = document.getElementById('toggle-theme');
+
+        themeButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
 </html>
